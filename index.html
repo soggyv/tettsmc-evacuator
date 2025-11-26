@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Евакуатор Миколаїв 24/7 | Послуги евакуатора недорого</title>
+    <meta name="description" content="Послуги евакуатора в Миколаєві та області. Цілодобово 24/7. Подача 20-30 хвилин. Ціни від 800 грн. Перевезення авто, спецтехніки, будматеріалів.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#ff6b00',
+                            dark: '#1a1a1a',
+                            gray: '#f4f4f4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1562920601-5766e4092b77?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .pulse-btn {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 107, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+        }
+        /* Mobile Sticky Bottom Bar */
+        .mobile-sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            display: none;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .mobile-sticky-bar {
+                display: flex;
+            }
+            .desktop-phone {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased pb-16 md:pb-0">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 text-2xl font-black text-brand-dark uppercase tracking-tighter">
+                <i class="fa-solid fa-truck-tow text-brand-orange"></i>
+                <span>Евакуатор<span class="text-brand-orange">Миколаїв</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-8 font-semibold text-sm uppercase">
+                <a href="#services" class="hover:text-brand-orange transition">Послуги</a>
+                <a href="#prices" class="hover:text-brand-orange transition">Ціни</a>
+                <a href="#gallery" class="hover:text-brand-orange transition">Фото робіт</a>
+                <a href="#contacts" class="hover:text-brand-orange transition">Контакти</a>
+            </nav>
+
+            <!-- Desktop Phone -->
+            <div class="hidden md:flex flex-col items-end">
+                <a href="tel:+380XXXXXXXXX" class="text-xl font-bold text-brand-dark hover:text-brand-orange transition">
+                    <i class="fa-solid fa-phone mr-2 text-brand-orange"></i>(0XX) XXX-XX-XX
+                </a>
+                <span class="text-xs text-green-600 font-bold flex items-center">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></span> Працюємо 24/7
+                </span>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl text-brand-dark p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 absolute w-full shadow-lg top-[60px]">
+            <nav class="flex flex-col gap-4 text-center font-bold uppercase">
+                <a href="#services" class="py-2 border-b border-gray-100" onclick="toggleMenu()">Послуги</a>
+                <a href="#prices" class="py-2 border-b border-gray-100" onclick="toggleMenu()">Ціни</a>
+                <a href="#gallery" class="py-2 border-b border-gray-100" onclick="toggleMenu()">Фото</a>
+                <a href="#contacts" class="py-2" onclick="toggleMenu()">Контакти</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center relative pt-16">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <div class="inline-block bg-brand-orange px-4 py-1 rounded-full text-sm font-bold mb-4 uppercase tracking-wider">
+                Подача машини 20-30 хвилин
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 leading-tight">
+                Евакуатор в Миколаєві <br>
+                <span class="text-brand-orange">та області 24/7</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                Перевезення авто до 3-х тонн, спецтехніки та вантажів. Працюємо без посередників. Чесні ціни без накруток.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="tel:+380XXXXXXXXX" class="pulse-btn bg-brand-orange text-white px-8 py-4 rounded-lg text-xl font-bold uppercase hover:bg-orange-600 transition flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone"></i> Викликати евакуатор
+                </a>
+                <a href="#prices" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-xl font-bold uppercase hover:bg-white hover:text-black transition flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-tags"></i> Дізнатись ціни
+                </a>
+            </div>
+            
+            <!-- Features Grid Mini -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 text-sm md:text-base">
+                <div class="bg-white/10 backdrop-blur-sm p-3 rounded-lg border border-white/20">
+                    <i class="fa-solid fa-clock text-brand-orange text-2xl mb-2"></i>
+                    <p class="font-bold">Цілодобово</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-3 rounded-lg border border-white/20">
+                    <i class="fa-solid fa-bolt text-brand-orange text-2xl mb-2"></i>
+                    <p class="font-bold">Термінова подача</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-3 rounded-lg border border-white/20">
+                    <i class="fa-solid fa-wallet text-brand-orange text-2xl mb-2"></i>
+                    <p class="font-bold">Низькі ціни</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-3 rounded-lg border border-white/20">
+                    <i class="fa-solid fa-route text-brand-orange text-2xl mb-2"></i>
+                    <p class="font-bold">Місто та область</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black uppercase text-brand-dark mb-3">Наші послуги</h2>
+                <div class="w-24 h-1 bg-brand-orange mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Перевозимо будь-які транспортні засоби вагою до 3 тонн. Суцільна платформа 6 метрів. Будь-яка складність.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition duration-300 border-b-4 border-brand-orange group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange transition">
+                        <i class="fa-solid fa-car-crash text-2xl text-brand-orange group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Евакуація після ДТП</h3>
+                    <p class="text-gray-600">Акуратне завантаження за допомогою потужної лебідки (13т). Працюємо із заблокованими колесами та сильними пошкодженнями.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition duration-300 border-b-4 border-brand-orange group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange transition">
+                        <i class="fa-solid fa-truck-pickup text-2xl text-brand-orange group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Перевезення спецтехніки</h3>
+                    <p class="text-gray-600">Перевезення міні-екскаваторів, навантажувачів, катків та іншої будівельної техніки до 3-х тонн.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition duration-300 border-b-4 border-brand-orange group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange transition">
+                        <i class="fa-solid fa-car text-2xl text-brand-orange group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Легкові та Джипи</h3>
+                    <p class="text-gray-600">Евакуація низьких авто, спортивних машин, позашляховиків. Гарантуємо дбайливе ставлення до техніки.</p>
+                </div>
+
+                 <!-- Service Card 4 -->
+                 <div class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition duration-300 border-b-4 border-brand-orange group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange transition">
+                        <i class="fa-solid fa-cubes-stacked text-2xl text-brand-orange group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Будматеріали</h3>
+                    <p class="text-gray-600">Перевезення металу, будівельного лісу, конструкцій. Довжина платформи дозволяє перевозити вантажі до 6 метрів.</p>
+                </div>
+
+                 <!-- Service Card 5 -->
+                 <div class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition duration-300 border-b-4 border-brand-orange group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange transition">
+                        <i class="fa-solid fa-city text-2xl text-brand-orange group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Міжмісто</h3>
+                    <p class="text-gray-600">Працюємо не тільки по Миколаєву, а й по всій області та Україні. Вигідні тарифи на далекі відстані.</p>
+                </div>
+
+                 <!-- Service Card 6 -->
+                 <div class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition duration-300 border-b-4 border-brand-orange group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange transition">
+                        <i class="fa-solid fa-clock text-2xl text-brand-orange group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Терміновий виклик</h3>
+                    <p class="text-gray-600">Зламалися на дорозі? Оперативно приїдемо та відвеземо на СТО або додому. Будь-яка форма оплати.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characteristics & Trust -->
+    <section class="py-16 bg-brand-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-black uppercase mb-6">Чому обирають нас?</h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-white/10 p-4 rounded-xl border border-white/10 hover:bg-white/20 transition duration-300">
+                            <i class="fa-solid fa-check-circle text-brand-orange text-2xl mb-2"></i>
+                            <h3 class="font-bold text-lg mb-1">Власна техніка</h3>
+                            <p class="text-gray-400 text-xs">Працюємо без посередників, тому ціни нижчі.</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-xl border border-white/10 hover:bg-white/20 transition duration-300">
+                            <i class="fa-solid fa-ruler-combined text-brand-orange text-2xl mb-2"></i>
+                            <h3 class="font-bold text-lg mb-1">Платформа 6м</h3>
+                            <p class="text-gray-400 text-xs">Перевезення будь-яких авто та вантажів до 6м.</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-xl border border-white/10 hover:bg-white/20 transition duration-300">
+                            <i class="fa-solid fa-wallet text-brand-orange text-2xl mb-2"></i>
+                            <h3 class="font-bold text-lg mb-1">Чесні ціни</h3>
+                            <p class="text-gray-400 text-xs">Вартість озвучуємо одразу. Без накруток.</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-xl border border-white/10 hover:bg-white/20 transition duration-300">
+                            <i class="fa-solid fa-credit-card text-brand-orange text-2xl mb-2"></i>
+                            <h3 class="font-bold text-lg mb-1">Зручна оплата</h3>
+                            <p class="text-gray-400 text-xs">Готівка, карта або переказ. Звітні документи.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="tel:+380XXXXXXXXX" class="inline-block bg-white text-brand-dark font-bold py-3 px-8 rounded hover:bg-brand-orange hover:text-white transition w-full md:w-auto text-center">
+                            Викликати евакуатор
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Placeholder for truck image -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden border-4 border-brand-orange transform rotate-2 hover:rotate-0 transition duration-500 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1615828795763-b26a4f32eb7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Евакуатор Миколаїв" class="w-full h-auto object-cover">
+                        <div class="absolute bottom-0 left-0 bg-brand-orange text-white px-4 py-0 font-bold text-lg shadow-lg">
+                            Лебідка 13 тонн!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="prices" class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-black uppercase text-brand-dark mb-3">Вартість послуг</h2>
+            <div class="w-24 h-1 bg-brand-orange mx-auto mb-10"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Price 1 -->
+                <div class="border rounded-xl p-8 hover:shadow-xl transition relative overflow-hidden">
+                    <h3 class="text-xl font-bold mb-4">По місту</h3>
+                    <div class="text-4xl font-black text-brand-orange mb-2">від 800 грн</div>
+                    <p class="text-sm text-gray-500 mb-6">Базовий тариф</p>
+                    <ul class="text-left text-gray-600 space-y-2 mb-8 text-sm">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Подача 20-30 хв</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Легкові авто</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Завантаження лебідкою</li>
+                    </ul>
+                    <a href="tel:+380XXXXXXXXX" class="block w-full py-3 border-2 border-brand-dark rounded font-bold hover:bg-brand-dark hover:text-white transition">Замовити</a>
+                </div>
+
+                <!-- Price 2 (Featured) -->
+                <div class="border-2 border-brand-orange rounded-xl p-8 shadow-xl relative bg-white transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-brand-orange text-white text-xs font-bold px-3 py-1">ПОПУЛЯРНЕ</div>
+                    <h3 class="text-xl font-bold mb-4">Складне завантаження / ДТП</h3>
+                    <div class="text-4xl font-black text-brand-orange mb-2">від 1000 грн</div>
+                    <p class="text-sm text-gray-500 mb-6">Індивідуальний розрахунок</p>
+                    <ul class="text-left text-gray-600 space-y-2 mb-8 text-sm">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Заблоковані колеса</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Виліт у кювет</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Позашляховики / Джипи</li>
+                    </ul>
+                    <a href="tel:+380XXXXXXXXX" class="block w-full py-3 bg-brand-orange text-white rounded font-bold hover:bg-orange-600 transition pulse-btn">Замовити</a>
+                </div>
+
+                <!-- Price 3 -->
+                <div class="border rounded-xl p-8 hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-4">Міжмісто</h3>
+                    <div class="text-4xl font-black text-brand-orange mb-2">Договірна</div>
+                    <p class="text-sm text-gray-500 mb-6">Ціна за км</p>
+                    <ul class="text-left text-gray-600 space-y-2 mb-8 text-sm">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>По області та Україні</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Попутний евакуатор</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Перевезення техніки</li>
+                    </ul>
+                    <a href="tel:+380XXXXXXXXX" class="block w-full py-3 border-2 border-brand-dark rounded font-bold hover:bg-brand-dark hover:text-white transition">Дізнатись ціну</a>
+                </div>
+            </div>
+            <p class="mt-8 text-gray-500 text-sm">*Кінцева вартість залежить від складності завантаження, ваги авто та відстані.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Placeholder -->
+    <section id="gallery" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-black uppercase text-center text-brand-dark mb-10">Наші роботи</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="aspect-square bg-gray-300 rounded-lg overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1626949033379-373801da2a10?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Фото роботи 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                 <!-- Gallery Item 2 -->
+                 <div class="aspect-square bg-gray-300 rounded-lg overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1596423402488-886d389270df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Фото роботи 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                 <!-- Gallery Item 3 -->
+                 <div class="aspect-square bg-gray-300 rounded-lg overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1635332619198-d62da3312011?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Фото роботи 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                 <!-- Gallery Item 4 -->
+                 <div class="aspect-square bg-gray-300 rounded-lg overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Фото роботи 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+            </div>
+            <p class="text-center mt-6 text-gray-500 italic">Тут будуть реальні фото вашого евакуатора</p>
+        </div>
+    </section>
+
+    <!-- Call to Action / Footer Top -->
+    <section id="contacts" class="py-20 bg-brand-dark text-center text-white relative overflow-hidden">
+        <!-- Background decorative element -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <i class="fa-solid fa-road absolute -left-10 bottom-0 text-9xl"></i>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-black uppercase mb-6">Потрібна допомога на дорозі?</h2>
+            <p class="text-xl text-gray-300 mb-10">Телефонуйте прямо зараз! Ми працюємо цілодобово та без вихідних.</p>
+            
+            <a href="tel:+380XXXXXXXXX" class="inline-flex items-center gap-4 bg-brand-orange text-white text-2xl md:text-4xl font-black py-4 px-8 rounded-full hover:bg-white hover:text-brand-orange transition duration-300 shadow-lg pulse-btn">
+                <i class="fa-solid fa-phone-volume"></i> (0XX) XXX-XX-XX
+            </a>
+            
+            <div class="flex justify-center gap-6 mt-10">
+                <a href="#" class="flex items-center gap-2 bg-[#7360f2] text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
+                    <i class="fa-brands fa-viber text-2xl"></i> Viber
+                </a>
+                <a href="#" class="flex items-center gap-2 bg-[#229ED9] text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
+                    <i class="fa-brands fa-telegram text-2xl"></i> Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-6 text-center text-sm">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Евакуатор Миколаїв. Всі права захищені.</p>
+            <p class="mt-2">Перевезення авто, спецтехніки, будматеріалів.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Bottom Nav -->
+    <div class="mobile-sticky-bar bg-white border-t border-gray-200 flex justify-between items-center px-4 py-3 pb-safe">
+        <div class="flex flex-col">
+            <span class="text-xs text-gray-500 font-bold uppercase">Терміново потрібен евакуатор?</span>
+            <span class="text-sm font-bold text-brand-dark">Приїдемо за 20 хв</span>
+        </div>
+        <a href="tel:+380XXXXXXXXX" class="bg-green-500 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:bg-green-600 transition flex items-center gap-2 animate-pulse">
+            <i class="fa-solid fa-phone"></i> Зателефонувати
+        </a>
+    </div>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.getElementById('menu-btn').addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
